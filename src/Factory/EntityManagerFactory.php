@@ -1,6 +1,6 @@
 <?php
 
-namespace CupcakeDoctrineModule\Factory;
+namespace Cupcake\DoctrineModule\Factory;
 
 use Cupcake\Config\ConfigManager;
 use Cupcake\Service\ServiceManager;
@@ -42,6 +42,10 @@ class EntityManagerFactory
 
         $setupConfig = Setup::createAnnotationMetadataConfiguration($entitiesPaths, $isDevMode, $proxyDir);
         $setupConfig->addCustomStringFunction('rand', 'Mapado\MysqlDoctrineFunctions\DQL\MysqlRand');
+        $setupConfig->addCustomStringFunction('round', 'Mapado\MysqlDoctrineFunctions\DQL\MysqlRound');
+        $setupConfig->addCustomStringFunction('date', 'Mapado\MysqlDoctrineFunctions\DQL\MysqlDate');
+        $setupConfig->addCustomStringFunction('date_format', 'Mapado\MysqlDoctrineFunctions\DQL\MysqlDateFormat');
+
         $entityManager = EntityManager::create($connectionParams, $setupConfig);
         $platform = $entityManager->getConnection()->getDatabasePlatform();
         $platform->registerDoctrineTypeMapping('enum', 'string');

@@ -11,7 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "CupcakeDoctrineModule": "src/"
+            "Cupcake\\DoctrineModule\\": "src/"
         }
     }
 }
