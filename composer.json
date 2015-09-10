@@ -1,0 +1,17 @@
+{
+    "name": "cupcakeframework/cupcake4-doctrine-module",
+    "description": "CupCake 4 Doctrine Module",
+    "require": {
+        "php": ">=5.3",
+        "doctrine/orm": "2.5.0",
+        "mapado/mysql-doctrine-functions": "1.*"
+    },
+    "require-dev": {
+        "cupcakeframework/cupcake4": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CupcakeDoctrineModule": "src/"
+        }
+    }
+}
